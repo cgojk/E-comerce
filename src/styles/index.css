@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-black: hsl(0, 0%, 0%);
+  --clr-grey-950: hsl(220, 13%, 13%);
+  --clr-grey-500: hsl(219, 9%, 45%);
+  --clr-grey-300: hsl(221, 22%, 81%);
+  --clr-grey-100: hsl(219, 35%, 92%);
+  --clr-grey-50: hsl(223, 64%, 98%);
+  --clr-orange-500: hsl(26, 100%, 55%);
+  --clr-orange-300: hsl(26, 100%, 71%);
+  --ff-sans: 'Kumbh Sans', system-ui, sans-serif;
+  /* =========================
+     FONT WEIGHTS
+  ========================== */
+  --fw-400: 400;
+  --fw-700: 700;
+  /* =========================
+     FONT SIZES
+  ========================== */
+  --fs-900: 2.75rem; /* 44px */
+  --fs-800: 1.75rem; /* 28px */
+  --fs-700: 1rem; /* 16px */
+  --fs-600: 0.9375rem; /* 15px */
+  --fs-500: 0.8125rem; /* 13px */
+  --fs-400: 0.75rem; /* 12px */
+  /* =========================
+     FONT 1
+     Kumbh Sans Bold
+     44px
+     line-height: 48px
+     letter-spacing: 0px
+  ========================== */
+  --font-1: var(--fw-700) var(--fs-900) / 3rem var(--ff-sans);
+  --ls-1: 0px;
+  /* =========================
+     FONT 2
+     Kumbh Sans Bold
+     28px
+     line-height: 32px
+     letter-spacing: 0px
+  ========================== */
+  --font-2: var(--fw-700) var(--fs-800) / 2rem var(--ff-sans);
+  --ls-2: 0px;
+  /* =========================
+     FONT 3
+     Kumbh Sans Bold
+     16px
+     line-height: 26px
+     letter-spacing: 0px
+  ========================== */
+  --font-3: var(--fw-700) var(--fs-700) / 1.625rem var(--ff-sans);
+  --ls-3: 0px;
+  /* =========================
+     FONT 4
+     Kumbh Sans Regular
+     16px
+     line-height: 26px
+     letter-spacing: 0px
+  ========================== */
+  --font-4: var(--fw-400) var(--fs-700) / 1.625rem var(--ff-sans);
+  --ls-4: 0px;
+  /* =========================
+     FONT 5
+     Kumbh Sans Regular
+     15px
+     line-height: 26px
+     letter-spacing: 0px
+  ========================== */
+  --font-5: var(--fw-400) var(--fs-600) / 1.625rem var(--ff-sans);
+  --ls-5: 0px;
+  /* =========================
+     FONT 6
+     Kumbh Sans Bold
+     13px
+     line-height: 16px
+     letter-spacing: 2px
+  ========================== */
+  --font-6: var(--fw-700) var(--fs-500) / 1rem var(--ff-sans);
+  --ls-6: 0.125rem;
+  /* =========================
+     FONT 7
+     Kumbh Sans Bold
+     12px
+     line-height: 15px
+     letter-spacing: 1.85px
+  ========================== */
+  --font-7: var(--fw-700) var(--fs-400) / 0.9375rem var(--ff-sans);
+  --ls-7: 0.1156rem;
+  --spacing-0: 0rem; /* 0px */
+  --spacing-50: 0.25rem; /* 4px */
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-150: 0.75rem; /* 12px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-500: 2.5rem; /* 40px */
+  --spacing-600: 3rem; /* 48px */
+  --spacing-700: 3.5rem; /* 56px */
+  --spacing-900: 4.5rem; /* 72px */
+  --spacing-1000: 5rem; /* 80px */
+  --spacing-1200: 6rem; /* 96px */
+  --spacing-1300: 6.5rem; /* 104px */
+  --spacing-1600: 8rem; /* 128px */
+}
+
+body {
+  background-color: var(--clr-white);
+  color: var(clr-black);
+  font-family: var(--ff-sans);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-image {
+  cursor: pointer;
+}
+
+.header {
+  background-color: var(--clr-white);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.5s ease-in-out;
+  color: var(--clr-black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-100);
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* Allow interaction when active */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none; /* Prevent interaction when not active */
+  z-index: 999; /* Ensure it is below the header */
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+
+.menu-btn {
+  display: none; /* Show hamburger button on mobile */
+  color: var(--clr-black);
+}
+
+.menu-btn {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 2000;
+  margin-top: -0.3em;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+.navigation .nav__list {
+  position: fixed;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+  top: var(--spacing-150);
+  left: -150%; /* hidden off screen */
+  height: 100vh;
+  background: var(--clr-white);
+  transition: left 0.3s ease;
+  font: var(--font-2);
+  padding: var(--spacing-400);
+}
+.navigation .nav__list .nav__items {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  color: var(--clr-black);
+}
+.navigation .nav__list .nav__items__links {
+  text-decoration: none;
+  color: var(--clr-black);
+  cursor: pointer;
+  font: var(--font-5);
+  position: relative;
+}
+
+.nav__list.open {
+  left: 0;
+  width: 60%;
+}
+
+.nav__items__links::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--clr-orange-500);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav__items__links:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.nav__list .nav__logo {
+  align-self: flex-start;
+  margin-bottom: 8em;
+}
+
+.shopping-cart {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.shopping-cart .shopping-cart-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.shopping-cart .avatar {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}/*# sourceMappingURL=index.css.map */

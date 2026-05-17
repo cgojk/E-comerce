@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+//  white
+    --clr-white: hsl(0, 0%, 100%);
+
+    // blakc
+    --clr-black: hsl(0, 0%, 0%);
+
+    // greys palettes
+
+    --clr-grey-950: hsl(220, 13%, 13%);
+    --clr-grey-500: hsl(219, 9%, 45%);
+    --clr-grey-300: hsl(221, 22%, 81%);
+    --clr-grey-100: hsl(219, 35%, 92%);
+    --clr-grey-50: hsl(223, 64%, 98%);
+
+//    orange palette
+
+
+
+  --clr-orange-500: hsl(26, 100%, 55%);
+  --clr-orange-300: hsl(26, 100%, 71%);
+  
+
+
+
+
+
+// * =========================
+//     FONT FAMILIES
+//  ========================== */
+
+ --ff-sans: 'Kumbh Sans', system-ui, sans-serif;
+
+ /* =========================
+    FONT WEIGHTS
+ ========================== */
+
+ --fw-400: 400;
+ --fw-700: 700;
+
+ /* =========================
+    FONT SIZES
+ ========================== */
+
+ --fs-900: 2.75rem;   /* 44px */
+ --fs-800: 1.75rem;   /* 28px */
+ --fs-700: 1rem;      /* 16px */
+ --fs-600: 0.9375rem; /* 15px */
+ --fs-500: 0.8125rem; /* 13px */
+ --fs-400: 0.75rem;   /* 12px */
+
+ /* =========================
+    FONT 1
+    Kumbh Sans Bold
+    44px
+    line-height: 48px
+    letter-spacing: 0px
+ ========================== */
+
+ --font-1: var(--fw-700) var(--fs-900) / 3rem var(--ff-sans);
+
+ --ls-1: 0px;
+
+ /* =========================
+    FONT 2
+    Kumbh Sans Bold
+    28px
+    line-height: 32px
+    letter-spacing: 0px
+ ========================== */
+
+ --font-2: var(--fw-700) var(--fs-800) / 2rem var(--ff-sans);
+
+ --ls-2: 0px;
+
+ /* =========================
+    FONT 3
+    Kumbh Sans Bold
+    16px
+    line-height: 26px
+    letter-spacing: 0px
+ ========================== */
+
+ --font-3: var(--fw-700) var(--fs-700) / 1.625rem var(--ff-sans);
+
+ --ls-3: 0px;
+
+ /* =========================
+    FONT 4
+    Kumbh Sans Regular
+    16px
+    line-height: 26px
+    letter-spacing: 0px
+ ========================== */
+
+ --font-4: var(--fw-400) var(--fs-700) / 1.625rem var(--ff-sans);
+
+ --ls-4: 0px;
+
+ /* =========================
+    FONT 5
+    Kumbh Sans Regular
+    15px
+    line-height: 26px
+    letter-spacing: 0px
+ ========================== */
+
+ --font-5: var(--fw-400) var(--fs-600) / 1.625rem var(--ff-sans);
+
+ --ls-5: 0px;
+
+ /* =========================
+    FONT 6
+    Kumbh Sans Bold
+    13px
+    line-height: 16px
+    letter-spacing: 2px
+ ========================== */
+
+ --font-6: var(--fw-700) var(--fs-500) / 1rem var(--ff-sans);
+
+ --ls-6: 0.125rem;
+
+ /* =========================
+    FONT 7
+    Kumbh Sans Bold
+    12px
+    line-height: 15px
+    letter-spacing: 1.85px
+ ========================== */
+
+ --font-7: var(--fw-700) var(--fs-400) / 0.9375rem var(--ff-sans);
+
+ --ls-7: 0.1156rem;
+
+
+
+//  * =========================
+//     SPACING
+//  ========================== */
+
+ --spacing-0: 0rem;         /* 0px */
+ --spacing-50: 0.25rem;      /* 4px */
+ --spacing-100: 0.5rem;     /* 8px */
+ --spacing-150: 0.75rem;    /* 12px */
+ --spacing-200: 1rem;       /* 16px */
+ --spacing-300: 1.5rem;     /* 24px */
+ --spacing-400: 2rem;       /* 32px */
+ --spacing-500: 2.5rem;     /* 40px */
+ --spacing-600: 3rem;       /* 48px */
+ --spacing-700: 3.5rem;     /* 56px */
+ --spacing-900: 4.5rem;     /* 72px */
+ --spacing-1000: 5rem;      /* 80px */
+ --spacing-1200: 6rem;      /* 96px */
+ --spacing-1300: 6.5rem;    /* 104px */
+ --spacing-1600: 8rem;      /* 128px */
+
+}
+
