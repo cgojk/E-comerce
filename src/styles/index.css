@@ -150,8 +150,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  pointer-events: none; /* Prevent interaction when not active */
-  z-index: 999; /* Ensure it is below the header */
+  z-index: 998; /* Ensure it is below the header */
 }
 
 .header__inner {
@@ -194,6 +193,7 @@ body {
   transition: left 0.3s ease;
   font: var(--font-2);
   padding: var(--spacing-400);
+  z-index: 1001; /* Ensure it is above the overlay */
 }
 .navigation .nav__list .nav__items {
   display: flex;
@@ -252,4 +252,166 @@ body {
   width: 24px;
   height: 24px;
   cursor: pointer;
+}
+
+.image-carousel {
+  display: flex;
+  gap: var(--spacing-300);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-300);
+  margin-top: var(--spacing-1000);
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.image-container img {
+  max-width: 100%;
+  width: 100%;
+  border-radius: 0.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+img.hidden {
+  display: none;
+}
+
+img.block {
+  display: block;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: normal;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  padding: 0;
+  line-height: 1;
+  z-index: 1;
+}
+
+.nav-button.left {
+  left: 1rem;
+}
+
+.nav-button.right {
+  right: 1rem;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+  padding: var(--spacing-400);
+}
+
+.Info__inner .Info__title {
+  color: var(--clr-grey-500);
+  font: var(--font-7);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-7);
+}
+.Info__inner .Info__product {
+  font: var(--font-2);
+  color: var(--clr-grey-950);
+  font: var(--font-2);
+  letter-spacing: var(--ls-4);
+  max-inline-size: 20ch;
+}
+.Info__inner .Info__description {
+  font: var(--font-5);
+  color: var(--clr-grey-500);
+  letter-spacing: var(--ls-5);
+}
+
+.info__price {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-300);
+}
+.info__price .price__current {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+.info__price .price__current .price__current--number {
+  font: var(--font-2);
+  color: var(--clr-grey-950);
+  letter-spacing: var(--ls-2);
+}
+.info__price .price__current .price__current--discount {
+  font: var(--font-6);
+  color: var(--clr-white);
+  background-color: var(--clr-black);
+  letter-spacing: var(--ls-6);
+}
+.info__price .price__current .price__current--original {
+  font: var(--font-5);
+  color: var(--clr-grey-500);
+  text-decoration: line-through;
+  letter-spacing: var(--ls-5);
+}
+.info__price .price__add-to-cart {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+  background-color: var(--clr-orange-500);
+  color: var(--clr-white);
+  font: var(--font-3);
+  letter-spacing: var(--ls-3);
+  padding: var(--spacing-300) var(--spacing-400);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.info__price .price__quantity {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+  background-color: var(--clr-grey-100);
+  padding: var(--spacing-200) var(--spacing-300);
+  border-radius: 0.5rem;
+}
+.info__price .price__quantity .quantity__number {
+  font: var(--font-2);
+  color: var(--clr-grey-950);
+  letter-spacing: var(--ls-2);
 }/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,20 @@
+// styles for tablet size and above
+
+@media (min-width: 768px) {
+  
+    
+
+.price__current{
+        display: flex;
+    
+        flex-direction: column;
+        gap: var(--spacing-400);
+
+    .priceDiscount,
+    .current__price{
+        align-self: flex-start;
+    }
+    
+}
+
+}
