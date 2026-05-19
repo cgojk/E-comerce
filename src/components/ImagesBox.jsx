@@ -2,6 +2,9 @@
 import { useState } from "react";
 import imagesData from "../ImagesData";
 import { useEffect } from "react";
+import SecondSection from "./SecondSection";
+import previous from "../assets/images/icon-previous.svg";
+import next from "../assets/images/icon-next.svg";
 
 
 export default function ImagesBox() {
@@ -36,23 +39,39 @@ useEffect(() => {
 
 
 return (
-    <section className="image-carousel container">
-       
+<section className="images-boxContent container">
 
-        <div className="image-container">
-            <button className="nav-button left" onClick={handlePreviousClick}>&lt;</button>
+    <section className="wrapper__images">
+        <div className="image-carousel container">
+            <div className="image-container">
+                <button className="nav-button left" onClick={handlePreviousClick}>&lt;</button>
 
+                {imagesData.map((image, index) => (
+                    <img 
+                        src={image.imageSrc} 
+                        alt={image.alt} 
+                        className={ currentImageIndex === index ? 'block' : 'hidden'}
+                        key={image.id} 
+                    />
+                ))}
+        
+                <button className="nav-button right" onClick={handleNextClick}>&gt;</button>
+            </div>
+
+        </div>
+        <div  className="thumbnails">
             {imagesData.map((image, index) => (
-                <img 
-                    src={image.imageSrc} 
-                    alt={image.alt} 
-                    className={ currentImageIndex === index ? 'block' : 'hidden'}
-                    key={image.id} 
+                <img
+                    src={image.thumbnailSrc}
+                    alt={image.alt}
+                    className={`thumbnail ${currentImageIndex === index ? 'active' : ''}`}
+                    onClick={() => setCurrentImageIndex(index)}
                 />
             ))}
-      
-            <button className="nav-button right" onClick={handleNextClick}>&gt;</button>
         </div>
     </section>
+
+    <SecondSection />
+</section>
 )
 }

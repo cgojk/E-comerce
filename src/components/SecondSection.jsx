@@ -16,33 +16,38 @@ export default function SecondSection(){
             casual wear companion. Featuring a
             durable rubber outer sole, they’ll
             withstand everything the weather can offer.</p>
-    </div>
+     </div>
         
-      <div className="Info__price">
+<div className="Info__price">
         
-           <div className="price__current">
-                 <div className="priceDiscount">
-                   <span className="price__current--number">$125.00</span>
-                   <span className="price__current--discount">50%</span>
+            <div className="price__current">
+                    <div className="priceDiscount">
+                      <span className="price__current--number">$125.00</span>
+                      <span className="price__current--discount">50%</span>
+                    </div>
+                    <div className="current__price">
+                      <span className="price__current--original">$250.00</span>
+                    </div>
+             </div>
+
+    <div className="Info__add-to-cart">
+                <div className="price__quantity">
+                        <button className="quantity__button quantity__button--minus">
+                            <img src={imageminus} alt="minus icon" />
+                        </button>
+                        <span className="quantity__number">0</span>
+                        <button className="quantity__button quantity__button--plus">
+                            <img src={imageplus} alt="plus icon" />
+                        </button>
                 </div>
-                <div className="current__price">
-                  <span className="price__current--original">$250.00</span>
-                </div>
-           </div>
-              <div className="price__quantity">
-                <button className="quantity__button quantity__button--minus">
-                    <img src={imageminus} alt="minus icon" />
-                </button>
-                <span className="quantity__number">0</span>
-                <button className="quantity__button quantity__button--plus">
-                    <img src={imageplus} alt="plus icon" />
-                </button>
-              </div>
-                <button className="price__add-to-cart">
-                    <img className="add-to-cart__icon" src={shoppingCart} alt="shopping cart icon" />
-                    <span className="add-to-cart__text">Add to cart</span>
-                </button>
-         </div>
+           
+                        <button className="price__add-to-cart">
+                            <img className="add-to-cart__icon" src={shoppingCart} alt="shopping cart icon" />
+                            <span className="add-to-cart__text">Add to cart</span>
+                        </button>
+                
+        </div>
+</div>
 </section>
     )
 }
