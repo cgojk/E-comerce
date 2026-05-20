@@ -1,9 +1,5 @@
 import React from "react";
-
-
-
 import shoppingCart from "../assets/images/icon-cart.svg";
-
 import imageminus from "../assets/images/icon-minus.svg";
 import imageplus from "../assets/images/icon-plus.svg";
 
@@ -12,9 +8,6 @@ import imageplus from "../assets/images/icon-plus.svg";
 
 export default function SecondSection({setCartItems}) {
     console.log(setCartItems);
-
-    // use states to create the adding and removign itmes to the shoppign cart and to update the quantity of the items in the cart
-
     const [quantity, setQuantity] = React.useState(0);
    
 
