@@ -1,13 +1,16 @@
 
+
+
 import { useState } from "react";
 import imagesData from "../ImagesData";
 import { useEffect } from "react";
 import SecondSection from "./SecondSection";
-import previous from "../assets/images/icon-previous.svg";
-import next from "../assets/images/icon-next.svg";
+import arrowPrevious from "../assets/images/icon-previous.svg";
+import arrowNext from "../assets/images/icon-next.svg";
 
 
-export default function ImagesBox() {
+
+export default function ImagesBox({setCartItems}) {
 
 const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -44,7 +47,9 @@ return (
     <section className="wrapper__images">
         <div className="image-carousel container">
             <div className="image-container">
-                <button className="nav-button left" onClick={handlePreviousClick}>&lt;</button>
+                <button className="nav-button left" onClick={handlePreviousClick}>
+                    <img src={arrowPrevious} alt="Previous" />
+                </button>
 
                 {imagesData.map((image, index) => (
                     <img 
@@ -55,7 +60,9 @@ return (
                     />
                 ))}
         
-                <button className="nav-button right" onClick={handleNextClick}>&gt;</button>
+                <button className="nav-button right" onClick={handleNextClick}>
+                    <img src={arrowNext} alt="Next" />
+                </button>
             </div>
 
         </div>
@@ -71,7 +78,7 @@ return (
         </div>
     </section>
 
-    <SecondSection />
+    <SecondSection setCartItems={setCartItems} />
 </section>
 )
 }

@@ -1,13 +1,34 @@
 import React from "react";
 
+
+
 import shoppingCart from "../assets/images/icon-cart.svg";
 
 import imageminus from "../assets/images/icon-minus.svg";
 import imageplus from "../assets/images/icon-plus.svg";
 
 
-export default function SecondSection(){
+
+
+export default function SecondSection({setCartItems}) {
+    console.log(setCartItems);
+
+    // use states to create the adding and removign itmes to the shoppign cart and to update the quantity of the items in the cart
+
+    const [quantity, setQuantity] = React.useState(0);
+   
+
+    function handleAddToCart() {
+    if (quantity === 0) return;
+
+    setCartItems(prev => prev + quantity);
+    setQuantity(0);
+  }
+
+
     return (
+
+
 <section className="Information container">
      <div className="Info__inner ">
         <h3 className="Info__title">Sneaker Company</h3>
@@ -32,16 +53,18 @@ export default function SecondSection(){
 
     <div className="Info__add-to-cart">
                 <div className="price__quantity">
-                        <button className="quantity__button quantity__button--minus">
+                        <button className="quantity__button quantity__button--minus" onClick={() => setQuantity(q => Math.max(0, q - 1))}>
                             <img src={imageminus} alt="minus icon" />
                         </button>
-                        <span className="quantity__number">0</span>
-                        <button className="quantity__button quantity__button--plus">
+                        
+                        <span className="quantity__number">{quantity}</span>
+
+                        <button className="quantity__button quantity__button--plus" onClick={() => setQuantity(q => q + 1)}>
                             <img src={imageplus} alt="plus icon" />
                         </button>
                 </div>
            
-                        <button className="price__add-to-cart">
+                        <button className="price__add-to-cart" onClick={handleAddToCart}>
                             <img className="add-to-cart__icon" src={shoppingCart} alt="shopping cart icon" />
                             <span className="add-to-cart__text">Add to cart</span>
                         </button>
@@ -49,6 +72,8 @@ export default function SecondSection(){
         </div>
 </div>
 </section>
+ 
+
     )
 }
      

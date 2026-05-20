@@ -4,14 +4,22 @@ import shoppingCart from '../assets/images/icon-cart.svg';
 import avatar from '../assets/images/image-avatar.png';
 import hamburger from '../assets/images/icon-menu.svg';
 import closeIcon from '../assets/images/icon-close.svg';
-
+import React from "react";
 import { useState } from "react";
+import CartCheckout from "../components/CartCheckout";
 
 
-export default function Navigation() {
+
+
+export default function Navigation({
+    cartOpen, 
+    setCartOpen,
+    setCartItems,
+     cartItems}) {
    
 
 const[menuOpen,setMenuOpen]= useState(false);
+// const [cartOpen, setCartOpen] = useState(false);
 
 
  // close the menu when clicking outside
@@ -23,39 +31,24 @@ const[menuOpen,setMenuOpen]= useState(false);
   function handleOverlayClick() {
     setMenuOpen(false);
   }
-    // if (menuOpen && event.target.classList.contains("overlay")) {
-    //   setActiveOverlay(true);
-    // }
     
-
-//  function handleOverlayclick(event) {
-//  if (menuOpen && event.target.classList.contains("overlay")) {
-//     event.target.classList.add("active");
-//  }else{
-    
-//     event.target.classList.remove("active");
-//     setMenuOpen(false);
-//  }
-// }
-
-
-
-/* <section className={`navigation-section overlay ${menuOpen ? "overlay--active" : ""}`} onClick={handleOverlayclick}></section> */
 
 
 
  return (
 <>
-<section className={` overlay ${menuOpen ? "active" : ""}`} 
+<div className={` overlay ${menuOpen ? "active" : ""}`} 
 onClick={handleOverlayClick}>
 
-</section>
+</div>
 
 
     
 
-<header className="header ">
-    
+<header className="header  ">
+    <div className="header-container container">
+
+
     <div className="header__inner">
                
 
@@ -115,10 +108,46 @@ onClick={handleOverlayClick}>
                 </ul>
             </nav>
     </div>
-    <div className="shopping-cart">
-        <img className="shopping-cart-icon" src={shoppingCart} alt="shopping cart icon" />
-        <img src={avatar} alt="avatar icon" className="avatar" />
+<div className="shopping-cart">
+
+   <div style={{ position:"relative" }}> 
+
+        {cartItems > 0 && (
+            <span className="cart-items-count"
+                onClick={() => setCartOpen(!cartOpen)}
+            >
+                {cartItems}
+           
+            </span>
+        )}
+            <img
+                className="shopping-cart-icon"
+                src={shoppingCart}
+                alt="shopping cart icon"
+                onClick={() => setCartOpen(!cartOpen)}
+
+            />
+
+
+            {cartOpen && (
+                <CartCheckout
+                 cartItems={cartItems} 
+                 setCartItems={setCartItems}
+                 setCartOpen={setCartOpen}
+
+                  />
+            )} 
+
+          
+      </div>
+       <img
+                src={avatar}
+                alt="avatar icon"
+                className="avatar"
+            />
     </div>
+    
+</div>
  </header>
 
 </>
