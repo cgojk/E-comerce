@@ -19,8 +19,8 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://github.com/cgojk/E-comerce.git
+- Live Site URL: https://zingy-platypus-335d94.netlify.app/
 
 ## My process
 
