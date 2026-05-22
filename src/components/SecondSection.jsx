@@ -51,12 +51,12 @@ setQuantity(0);
 
     <div className="Info__add-to-cart">
                 <div className="price__quantity">
-                        <button className="quantity__button quantity__button--minus" onClick={buttonminusitems}>
+                        <button className="quantity__button quantity__button--minus" aria-label="decrease count" onClick={buttonminusitems}>
                             <img src={imageminus} alt="minus icon" />
                         </button>
                        <span className="quantity__number">{quantity}</span>
 
-                        <button className="quantity__button quantity__button--plus" onClick={buttonplusitems}>
+                        <button className="quantity__button quantity__button--plus" aria-label="increase count" onClick={buttonplusitems}>
                             <img src={imageplus} alt="plus icon" />
                         </button>
                 </div>
