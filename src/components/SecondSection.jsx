@@ -7,17 +7,23 @@ import imageplus from "../assets/images/icon-plus.svg";
 
 
 export default function SecondSection({setCartItems}) {
-    console.log(setCartItems);
-    const [quantity, setQuantity] = React.useState(0);
+ console.log(setCartItems);
+const [quantity, setQuantity] = React.useState(0);
    
 
-    function handleAddToCart() {
-    if (quantity === 0) return;
+function handleAddToCart() {
+if (quantity === 0) return;
 
-    setCartItems(prev => prev + quantity);
-    setQuantity(0);
+setCartItems(prev => prev + quantity);
+setQuantity(0);
   }
 
+  function buttonminusitems (){
+    setQuantity(q => Math.max(0, q - 1));
+  }
+  function buttonplusitems (){
+    setQuantity(q => q + 1);
+  }
 
     return (
 
@@ -33,8 +39,7 @@ export default function SecondSection({setCartItems}) {
      </div>
         
 <div className="Info__price">
-        
-            <div className="price__current">
+                    <div className="price__current">
                     <div className="priceDiscount">
                       <span className="price__current--number">$125.00</span>
                       <span className="price__current--discount">50%</span>
@@ -46,13 +51,12 @@ export default function SecondSection({setCartItems}) {
 
     <div className="Info__add-to-cart">
                 <div className="price__quantity">
-                        <button className="quantity__button quantity__button--minus" onClick={() => setQuantity(q => Math.max(0, q - 1))}>
+                        <button className="quantity__button quantity__button--minus" onClick={buttonminusitems}>
                             <img src={imageminus} alt="minus icon" />
                         </button>
-                        
-                        <span className="quantity__number">{quantity}</span>
+                       <span className="quantity__number">{quantity}</span>
 
-                        <button className="quantity__button quantity__button--plus" onClick={() => setQuantity(q => q + 1)}>
+                        <button className="quantity__button quantity__button--plus" onClick={buttonplusitems}>
                             <img src={imageplus} alt="plus icon" />
                         </button>
                 </div>
@@ -62,8 +66,8 @@ export default function SecondSection({setCartItems}) {
                             <span className="add-to-cart__text">Add to cart</span>
                         </button>
                 
-        </div>
-</div>
+               </div>
+   </div>
 </section>
  
 
